@@ -1,25 +1,25 @@
 package sample;
 
-import java.sql.ResultSet;
-
 public class TrainModel {  // is a Singleton!
+
     //variable for database connection
-    private TrainModel() {
+
+    private TrainModel(){
     }
 
     static sample.TrainModel inst;
 
-    static sample.TrainModel getInstance() {
+    static sample.TrainModel getInstance(){
         if (inst == null) inst = new sample.TrainModel();
         return inst;
     }
 
-    String[] getStations() {
+    String[] getRoutes() {
         String[] s = {"FraKBHTilOdense", "FraOdenseTilKBH", "FraKBHTilNykobingF", "FraNykobingFTilKBH"}; //select station name from 'tabelnavn'
         return s;
     }
 
-    String[] getArrivals() {
+    String[] getDepartureStation() {
         String[] z = {"KBH", "HojeTaastrup", "Roskilde", "Ringsted", "Odense", "Naestved", "NykobingF"};
         return z;
     }

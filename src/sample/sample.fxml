@@ -24,10 +24,10 @@
         </rowConstraints>
          <children>
             <Label text="Rute" />
-            <ComboBox fx:id="DepartureStation" prefWidth="150.0" GridPane.rowIndex="1" />
+            <ComboBox fx:id="RouteName" prefWidth="150.0" GridPane.rowIndex="1" />
             <Label text="Afgang fra" GridPane.columnIndex="1" />
-            <ComboBox fx:id="ArrivalStation" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button fx:id="search" mnemonicParsing="false" onAction="#initialize" text="Search" GridPane.rowIndex="2" />
+            <ComboBox fx:id="DepartureStation" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="search" mnemonicParsing="false" onAction="#initialize" text="Søg" GridPane.rowIndex="2" />
             <TextArea fx:id="returnTime" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          </children>
       </GridPane>
