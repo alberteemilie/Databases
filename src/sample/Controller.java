@@ -11,9 +11,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Controller {
-    //fxid's til comboboxes og knap fra scenebuilder
     TrainModel m = TrainModel.getInstance(); // make a model object when you create the controller
 
+    //fxid's til comboboxes og knap fra scenebuilder
     @FXML
     ComboBox RouteName;
     @FXML
@@ -25,10 +25,12 @@ public class Controller {
 
     DatabaseHelper databaseHelper = new DatabaseHelper();
 
+
+
+
     @FXML
     public void initialize() throws SQLException { //executed when GUI is ready
 
-        databaseHelper.connect();
 
         //udfylder comboboxes med Strings fra TrainModel.java
         for (String s : TrainModel.getInstance().getRoutes()) {
@@ -38,32 +40,43 @@ public class Controller {
             DepartureStation.getItems().add(z);
         }
 
+        //Eventhandler til søg-knap
         search.addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
 
             @Override
             public void handle(ActionEvent actionEvent) {
                 try {
+                    returnTime.clear(); //sletter tidligere data fra textarea
+                    databaseHelper.connect(); // opretter forbindelse til database når der trykkes på knappen
+
                     Object selectedRoute = RouteName.getSelectionModel().getSelectedItem();
                     Object selectedDeparture = DepartureStation.getSelectionModel().getSelectedItem();
-                    returnTime.clear(); //for ikke at skrive videre på samme linje, hvis man vælger ny rute
-                    returnTime.appendText("Tog linje " + selectedRoute + " Fra " + selectedDeparture + "station \npå følgende tidspunkter: \n");
+
+                    returnTime.appendText("Tog linje: " + selectedRoute + "\nkører på følgende tidspunkter fra: "
+                            + selectedDeparture + " station\n");
 
 
                     ResultSet res = databaseHelper.chosenRoute(DepartureStation.getValue().toString(), RouteName.getValue().toString());
-                    while (res != null & res.next()) {
-                        String name1 = res.getString("Routes");
-                        String name2 = res.getString("Name");
-                        String name3 = res.getString("DepartureTime");
 
-                        returnTime.appendText("\n " + name1);
-                        returnTime.appendText(name2);
-                        returnTime.appendText(name3);
+                    while (res != null & res.next()) {
+                        String routeString = res.getString("Routes");
+                        String stationNameString = res.getString("Name");
+                        String departureTimeString = res.getString("DepartureTime");
+
+                        returnTime.appendText("\n " + routeString + ", fra ");
+                        returnTime.appendText(stationNameString + " station, kl: ");
+                        returnTime.appendText(departureTimeString);
 
                     }
+                    //closing the database connection
+                    databaseHelper.conn.close();
+                    System.out.println("Database connection is closed");
+
 
                 } catch (SQLException sqlE) {
                     System.out.println("SqlException Error");
-                    returnTime.appendText("SqlException Error");
+                    returnTime.appendText("Could not find data");
+
                 }
             }
         });

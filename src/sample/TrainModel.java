@@ -3,7 +3,6 @@ package sample;
 public class TrainModel {  // is a Singleton!
 
     //variable for database connection
-
     private TrainModel(){
     }
 
@@ -23,11 +22,5 @@ public class TrainModel {  // is a Singleton!
         String[] z = {"KBH", "HojeTaastrup", "Roskilde", "Ringsted", "Odense", "Naestved", "NykobingF"};
         return z;
     }
-
-    String findRoute(String DepartureStation, String ArrivalStation) {
-        //make query to database - make it into a string - return string
-        return "route from " + DepartureStation + "\n to " + ArrivalStation;
-    }
-
 }
 

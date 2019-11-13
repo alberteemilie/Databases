@@ -5,17 +5,17 @@ import java.sql.*;
 public class DatabaseHelper {
     Connection conn = null;
 
-
     public void connect() {
         try {
             String url = "jdbc:sqlite:Test1-kopi.db";
             conn = DriverManager.getConnection(url);
         } catch (Exception e) {
-            System.out.println("PROBLEMER MED FORBINDELSE TIL DB");
+            System.out.println("Problemer med at oprette forbindelse til databasen");
             System.out.println(e.toString());
-        }
+
     }
 
+    }
 
     public ResultSet chosenRoute(String Routes, String Name) throws SQLException {
         PreparedStatement stmt = null;
@@ -27,7 +27,12 @@ public class DatabaseHelper {
         stmt.setString(1, Routes);
         stmt.setString(2, Name);
         chRoute = stmt.executeQuery();
-        String s;
+
+
+
         return chRoute;
     }
+
+
+
 }

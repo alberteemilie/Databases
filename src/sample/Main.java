@@ -11,7 +11,6 @@ public class Main extends Application {
         //launch triggers a function to start
         launch(args);
     }
-
   //creating a stage - a window on the screen
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -22,5 +21,4 @@ public class Main extends Application {
         //nothing is visible until you call 'show' as beneath
         primaryStage.show();
     }
-
 }
