@@ -112,7 +112,7 @@
     <session id="-1743309330">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.15" value="1" />
@@ -302,9 +302,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
-    <option name="width" value="1280" />
+    <option name="width" value="1118" />
     <option name="height" value="777" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -358,7 +358,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1573646831415" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574086873864" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -469,7 +469,7 @@
       <workItem from="1571915348885" duration="816000" />
       <workItem from="1571916836731" duration="7332000" />
       <workItem from="1572209683066" duration="5837000" />
-      <workItem from="1573475290339" duration="34689000" />
+      <workItem from="1573475290339" duration="35114000" />
     </task>
     <task id="LOCAL-00001" summary="Tidspunkter for afgang virker nu">
       <created>1573640240429</created>
@@ -489,7 +489,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84094000" />
+    <option name="totallyTimeSpent" value="84519000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -513,7 +513,7 @@
       <window_info id="Image Layers" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3081571" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.17821783" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.17821783" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.34743202" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
