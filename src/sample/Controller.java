@@ -49,13 +49,15 @@ public class Controller {
                     returnTime.clear(); //sletter tidligere data fra textarea
                     databaseHelper.connect(); // opretter forbindelse til database når der trykkes på knappen
 
+                    //Her oprettes to nye objekter der indeholder den valgte rute og afgangsstation i GUI'en
                     Object selectedRoute = RouteName.getSelectionModel().getSelectedItem();
                     Object selectedDeparture = DepartureStation.getSelectionModel().getSelectedItem();
 
+                    //returntime er textarea, og her tilføjes både text, formattering og valgte objekter
                     returnTime.appendText("Tog linje: " + selectedRoute + "\nkører på følgende tidspunkter fra: "
                             + selectedDeparture + " station\n");
 
-
+                    //sætter 'res' til chosenRoute fra DatabaseHelper for at bruge variablerne derfra herefter
                     ResultSet res = databaseHelper.chosenRoute(DepartureStation.getValue().toString(), RouteName.getValue().toString());
 
                     while (res != null & res.next()) {
